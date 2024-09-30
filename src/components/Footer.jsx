@@ -38,8 +38,8 @@ const Footer = () => {
   return (
     <div className="py-4 flex flex-col gap-8">
       <hr className="w-[95%] h-[2px] bg-gradient-to-r from-[#FFFFFF00] via-[#00FFAF] to-[#FFFFFF00] mx-auto mt-[5rem] mb-[1rem]" />
-      <div className="px-[3rem] py-6 flex justify-between items-center">
-        <div className="flex gap-4">
+      <div className="px-[3rem] py-6 flex justify-between items-center flex-col lg:flex-row">
+        <div className="flex gap-4 flex-wrap">
           <div className="relative w-[2.5rem] h-[3.5rem]">
             <Image src="/logo.png" alt="logo" fill />
           </div>
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex gap-5 text-white font-semibold items-center">
-          <p className="text-xl">
+          <p className="text-xl whitespace-nowrap">
             <span className="text-[#00FFAF]">We</span> Accept
           </p>
           <div className="flex gap-3">

@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${cardo.className} antialiased`}>
-        <div className="home">
+        <div className="home relative flex flex-col">
           <Header />
         </div>
         {children}

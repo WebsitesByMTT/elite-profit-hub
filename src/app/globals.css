@@ -10,13 +10,26 @@ body {
   background-image: url("/homebackground.png");
   width: 100%;
   height: 100vh;
-  object-fit: contain;
+  background-size: cover;
 }
 
 .boxShadow {
   -webkit-box-shadow: 0px 4px 10px 10px #00ffae5c;
   -moz-box-shadow: 0px 4px 10px 10px #00ffae5d;
   box-shadow: 0px 4px 10px 10px #00ffae70;
+}
+
+.animateopen {
+  animation: pop-up 0.2s ease-in-out;
+}
+
+@keyframes pop-up {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
 }
 
 @media screen and (max-width: 800px) {
