@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${cardo.className} antialiased`}>
+      <body className={`${cardo.className} bg-[#010101] antialiased`}>
         <div className="home relative flex flex-col">
           <Header />
         </div>
