@@ -26,12 +26,25 @@ body {
   animation: pop-up 0.2s ease-in-out;
 }
 
+.animateexpand {
+  animation: expand 0.2s ease-in-out;
+}
+
 @keyframes pop-up {
   from {
     scale: 0;
   }
   to {
     scale: 1;
+  }
+}
+
+@keyframes expand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
 

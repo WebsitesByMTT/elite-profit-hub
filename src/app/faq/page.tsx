@@ -1,3 +1,4 @@
+import Underline from "@/components/Underline";
 import React from "react";
 
 const page = () => {
@@ -112,10 +113,13 @@ const page = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-[4rem]">
-      <h2 className="text-4xl text-white font-semibold text-center">
-        <span className="text-[#00FFAF]">F</span>AQ
-      </h2>
+    <div className="flex flex-col gap-[4rem] pt-7">
+      <div className="group w-fit mx-auto">
+        <h2 className="text-4xl text-white font-semibold text-center">
+          <span className="text-[#00FFAF]">F</span>AQ
+        </h2>
+        <Underline />
+      </div>
       {faq.map((item, ind) => (
         <div
           key={ind}

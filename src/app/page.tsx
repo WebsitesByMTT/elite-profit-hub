@@ -1,3 +1,5 @@
+"use client";
+import CalculatorPopup from "@/components/CalculatorPopup";
 import Calculator from "@/components/svg/Calculator";
 import FileWithdrawals from "@/components/svg/FileWithdrawals";
 import GeniuneIncestment from "@/components/svg/GeniuneIncestment";
@@ -5,28 +7,36 @@ import ProManagement from "@/components/svg/ProManagement";
 import RealRegistered from "@/components/svg/RealRegistered";
 import ReliableInvestment from "@/components/svg/ReliableInvestment";
 import StrongDDOS from "@/components/svg/StrongDDOS";
+import Underline from "@/components/Underline";
 import Link from "next/link";
+import { useState } from "react";
+
+interface InvestmentPlansProps {
+  setOpen: (open: boolean) => void;
+}
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
   return (
     <div className="relative">
-      <InvestmentPlans />
+      <InvestmentPlans setOpen={setOpen} />
       <Features />
       <AboutUs />
       <div className="flex items-center justify-center py-[5rem] gap-8 flex-col text-2xl font-semibold">
         <p className="text-white">How To Get Started?</p>
         <Link
-          className="text-white px-5 py-3 border-[2px] border-[#00FFAF] rounded-lg"
-          href="/"
+          className="text-white px-5 py-3 border-[2px] border-[#00FFAF] rounded-lg relative overflow-hidden hover hover:text-black hover:after:z-[-1] after:translate-y-[100%] hover:after:translate-y-0 hover:after:transition-all hover:after:duration-500 hover:after:top-0 hover:after:left-0 hover:after:absolute hover:after:w-full hover:after:h-full hover:after:bg-[#00FFAF]"
+          href="/start"
         >
           Get Started
         </Link>
       </div>
+      {open && <CalculatorPopup open={open} setOpen={setOpen} />}
     </div>
   );
 }
 
-const InvestmentPlans = () => {
+const InvestmentPlans: React.FC<InvestmentPlansProps> = ({ setOpen }) => {
   const data = [
     {
       percent: "0.8",
@@ -45,10 +55,13 @@ const InvestmentPlans = () => {
     },
   ];
   return (
-    <div className="flex flex-col gap-10 text-center py-4">
-      <h2 className="text-4xl text-white font-semibold">
-        Investment <span className="text-[#00FFAF]">Plans</span>
-      </h2>
+    <div className="flex flex-col gap-10 text-center py-4 pt-7">
+      <div className="group w-fit mx-auto">
+        <h2 className="text-4xl text-white font-semibold">
+          Investment <span className="text-[#00FFAF]">Plans</span>
+        </h2>
+        <Underline />
+      </div>
       <div className="flex flex-wrap gap-8 md:px-10 justify-center md:justify-evenly">
         {data.map((item, ind) => (
           <InverstmentCard
@@ -56,10 +69,10 @@ const InvestmentPlans = () => {
             percent={item.percent}
             max={item.max}
             min={item.min}
+            setOpen={setOpen}
           />
         ))}
       </div>
-      <hr className="w-[70%] h-[1.5px] bg-gradient-to-r from-[#FFFFFF00] via-[#00FFAF] to-[#FFFFFF00] mx-auto my-[4rem]" />
     </div>
   );
 };
@@ -68,10 +81,12 @@ const InverstmentCard = ({
   percent,
   max,
   min,
+  setOpen,
 }: {
   percent: string;
   max: string;
   min: string;
+  setOpen: (open: boolean) => void;
 }) => {
   return (
     <div className="bg-gradient-to-b items-stretch from-[#00FFAF] to-[#2FA70080] p-[2px] rounded-xl w-[26%] min-w-[300px]">
@@ -91,10 +106,15 @@ const InverstmentCard = ({
             <span>Prinicipal - Included</span>
           </div>{" "}
         </div>
-        <div className="flex gap-3 px-4 py-2 bg-[#00FFAF] w-fit rounded-lg">
+        <button
+          onClick={() => {
+            setOpen(true);
+          }}
+          className="flex gap-3 px-4 py-2 bg-[#00FFAF] w-fit rounded-lg"
+        >
           <Calculator />
           <span className="text-black font-semibold">Calculate</span>
-        </div>
+        </button>
         <p className="text-white">After 30 Days - Return Principal</p>
       </div>
     </div>
@@ -130,9 +150,12 @@ const Features = () => {
   ];
   return (
     <div className="flex flex-col gap-10 text-center py-[4rem]">
-      <h2 className="text-4xl text-white font-semibold">
-        <span className="text-[#00FFAF]">Our</span> Features
-      </h2>
+      <div className="w-fit mx-auto group">
+        <h2 className="text-4xl text-white font-semibold">
+          <span className="text-[#00FFAF]">Our</span> Features
+        </h2>
+        <Underline />
+      </div>
       <div className="grid lg:grid-cols-3 gap-10 py-10 w-fit md:w-[80%] mx-auto md:grid-cols-2 grid-cols-1">
         {data.map((item, ind) => (
           <div key={ind}>
@@ -154,9 +177,12 @@ const AboutUs = () => {
   return (
     <>
       <div className="w-[95%] md:w-[80%] bg-[#000000] flex flex-col gap-8 items-center mx-auto  py-4 md:py-[5rem] px-4 rounded-2xl boxShadow">
-        <h2 className="text-4xl text-white font-semibold">
-          About <span className="text-[#00FFAF]">Us</span>
-        </h2>
+        <div className="w-fit mx-auto group">
+          <h2 className="text-4xl text-white font-semibold">
+            About <span className="text-[#00FFAF]">Us</span>
+          </h2>
+          <Underline />
+        </div>
         <p className="text-white text-center w-[95%] md:w-[80%]">
           EPH Limited, a privately-held UK-registered investment firm, launched
           an online platform on August 26, 2024, under the leadership of [Name].
@@ -173,7 +199,7 @@ const AboutUs = () => {
           in a short span.
         </p>
         <Link
-          className="text-white px-3 py-1 border-[1px] rounded-lg w-fit"
+          className="text-white px-3 w-fit py-1 border-[1px] rounded-lg hover:bg-[#00FFAF] transition-all duration-500 hover:text-black hover:border-[#000]"
           href="/"
         >
           Join Now

@@ -1,5 +1,6 @@
 "use client";
 import Signup from "@/components/Signup";
+import Underline from "@/components/Underline";
 import React, { useState } from "react";
 
 const Page = () => {
@@ -33,10 +34,12 @@ const Page = () => {
   ];
   return (
     <div className="py-10">
-      <h2 className="text-4xl text-white font-semibold text-center pb-12 pt-7">
-        <span className="text-[#00FFAF]">Get</span> Started
-        <span className="block mx-auto bg-white  rounded-lg mt-1 h-[5px] w-[100px] md:w-[150px]"></span>
-      </h2>
+      <div className="w-fit mx-auto group">
+        <h2 className="text-4xl text-white font-semibold text-center pb-12 pt-7">
+          <span className="text-[#00FFAF]">Get</span> Started
+          <Underline />
+        </h2>
+      </div>
 
       <div className="w-[92%] md:w-[70%] bg-[#000000] flex flex-col gap-5 md:gap-8 items-center mx-auto py-[1.5rem] px-4 rounded-2xl boxShadow">
         {getStarted?.map((item, ind) => (

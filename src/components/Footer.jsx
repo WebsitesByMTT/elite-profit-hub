@@ -52,7 +52,7 @@ const Footer = () => {
           <div className="flex whitespace-nowrap md:flex-nowrap flex-wrap gap-5 items-center justify-center">
             {header.map((item, ind) => (
               <Link key={ind} href={item.link} className="text-white ">
-                <button className="uppercase font-light">{item.name}</button>
+                <button className="uppercase font-light hover:opacity-80 transition-all">{item.name}</button>
               </Link>
             ))}
           </div>
