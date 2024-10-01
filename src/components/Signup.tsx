@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import Cross from "./svg/Cross";
 
@@ -41,8 +42,10 @@ const Signup: React.FC<SignupProps> = ({ open, setOpen }) => {
     };
   }, [open]);
 
+  if (!open) return null;
+
   return (
-    <div className="h-screen w-full absolute top-auto left-auto flex items-center justify-center bg-[#00000098] overflow-y-hidden ">
+    <div className="h-screen  w-full fixed inset-0 top-auto left-auto flex items-center justify-center bg-[#00000098] overflow-y-hidden ">
       <div className="relative w-[90%] mx-auto md:w-[70%] lg:w-[45%] bg-[#000000] flex flex-col gap-8 items-center  px-4 md:px-[3rem] animateopen py-[2rem] rounded-2xl boxShadow">
         <button
           className="absolute right-2 top-2 p-2 rounded-full border-[1px] border-[#00FFAF] h-[2rem] md:h-auto"

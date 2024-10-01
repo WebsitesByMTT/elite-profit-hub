@@ -126,8 +126,8 @@ const page = () => {
           <div className="flex flex-col gap-5 py-4">
             {item.info.map((data, ind) => (
               <div key={ind} className="flex gap-4">
-                <p className="text-xl text-[#00FFAF]">{ind + 1}.</p>
-                <div className="flex flex-col gap-2">
+                <p className="text-2xl text-[#00FFAF]">{ind + 1}.</p>
+                <div className="flex text-lg flex-col gap-2">
                   <p className="text-xl text-[#00FFAF]">{data.ques}</p>
                   <p>{data.ans}</p>
                 </div>
