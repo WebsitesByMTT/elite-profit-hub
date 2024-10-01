@@ -92,7 +92,7 @@ const InverstmentCard = ({
     <div className="bg-gradient-to-b items-stretch from-[#00FFAF] to-[#2FA70080] p-[2px] rounded-xl w-[26%] min-w-[300px]">
       <div className="px-4 py-6 bg-[#010101] rounded-xl flex flex-col gap-5 h-full items-center">
         <div className="flex justify-between gap-10">
-          <div className="h-[6rem] w-[6rem] rounded-full flex flex-col items-center justify-center border-[2px] text-white border-[#00FFAF]">
+          <div className="h-[6rem] w-[6rem] rounded-full flex flex-col items-center justify-center border-[2px] text-white border-[#00FFAF] spin-shadow">
             <p>{percent} %</p>
             <p>Daily</p>
           </div>
