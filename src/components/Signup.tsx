@@ -67,7 +67,7 @@ const Signup: React.FC<SignupProps> = ({ open, setOpen }) => {
               onChange={handleChange}
               value={data.firstName}
               className="bg-transparent col-span-3 text-xl outline-none"
-              placeholder="Enter Name"
+              placeholder="Enter First Name"
             />
           </div>
           <hr className="w-full opacity-40 h-[2px] bg-gradient-to-r from-[#FFFFFF00] via-[#00FFAF] to-[#FFFFFF00] mx-auto" />
@@ -80,7 +80,7 @@ const Signup: React.FC<SignupProps> = ({ open, setOpen }) => {
               onChange={handleChange}
               value={data.lastName}
               className="bg-transparent col-span-3 text-xl outline-none"
-              placeholder="Enter Name"
+              placeholder="Enter Last Name"
             />
           </div>
           <hr className="w-full opacity-40 h-[2px] bg-gradient-to-r from-[#FFFFFF00] via-[#00FFAF] to-[#FFFFFF00] mx-auto" />
@@ -93,7 +93,7 @@ const Signup: React.FC<SignupProps> = ({ open, setOpen }) => {
               onChange={handleChange}
               value={data.email}
               className="bg-transparent col-span-3 text-xl outline-none"
-              placeholder="Enter Name"
+              placeholder="Enter Email"
             />
           </div>
           <hr className="w-full opacity-40 h-[2px] bg-gradient-to-r from-[#FFFFFF00] via-[#00FFAF] to-[#FFFFFF00] mx-auto" />
@@ -105,7 +105,7 @@ const Signup: React.FC<SignupProps> = ({ open, setOpen }) => {
               onChange={handleChange}
               value={data.password}
               className="bg-transparent col-span-3 text-xl outline-none"
-              placeholder="Enter Name"
+              placeholder="Enter Password"
             />
           </div>
           <hr className="w-full opacity-40 h-[2px] bg-gradient-to-r from-[#FFFFFF00] via-[#00FFAF] to-[#FFFFFF00] mx-auto" />
