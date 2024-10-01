@@ -49,7 +49,7 @@ const InvestmentPlans = () => {
       <h2 className="text-4xl text-white font-semibold">
         Investment <span className="text-[#00FFAF]">Plans</span>
       </h2>
-      <div className="flex flex-wrap gap-8 px-10 justify-evenly">
+      <div className="flex flex-wrap gap-8 md:px-10 justify-center md:justify-evenly">
         {data.map((item, ind) => (
           <InverstmentCard
             key={ind}
@@ -74,8 +74,8 @@ const InverstmentCard = ({
   min: string;
 }) => {
   return (
-    <div className="bg-gradient-to-b from-[#00FFAF] to-[#2FA70080] p-[2px] rounded-xl w-[26%] min-w-[300px]">
-      <div className="px-4 py-6 bg-[#010101] rounded-xl flex flex-col gap-5 items-center">
+    <div className="bg-gradient-to-b items-stretch from-[#00FFAF] to-[#2FA70080] p-[2px] rounded-xl w-[26%] min-w-[300px]">
+      <div className="px-4 py-6 bg-[#010101] rounded-xl flex flex-col gap-5 h-full items-center">
         <div className="flex justify-between gap-10">
           <div className="h-[6rem] w-[6rem] rounded-full flex flex-col items-center justify-center border-[2px] text-white border-[#00FFAF]">
             <p>{percent} %</p>
@@ -133,11 +133,16 @@ const Features = () => {
       <h2 className="text-4xl text-white font-semibold">
         <span className="text-[#00FFAF]">Our</span> Features
       </h2>
-      <div className="grid lg:grid-cols-3 gap-10 py-10 w-[90%] md:w-[80%] mx-auto md:grid-cols-2 grid-cols-1">
+      <div className="grid lg:grid-cols-3 gap-10 py-10 w-fit md:w-[80%] mx-auto md:grid-cols-2 grid-cols-1">
         {data.map((item, ind) => (
-          <div key={ind} className="flex justify-between items-center gap-4">
-            <div className="h-[3.5rem]">{item.icon}</div>
-            <p className="text-white text-2xl w-[80%] text-left">{item.text}</p>
+          <div key={ind}>
+            <div className="flex justify-between items-center gap-6 md:gap-4">
+              <div className="h-[3.5rem]">{item.icon}</div>
+              <p className="text-white text-2xl w-[80%] text-left">
+                {item.text}
+              </p>
+            </div>
+            <hr className="w-full h-[2px] bg-gradient-to-r from-[#FFFFFF00] via-[#00FFAF] to-[#FFFFFF00] mx-auto my-6 md:hidden" />
           </div>
         ))}
       </div>
