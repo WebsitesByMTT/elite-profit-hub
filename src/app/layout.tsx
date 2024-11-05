@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Cardo } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 const cardo = Cardo({
   weight: ["400", "700"],
@@ -29,6 +30,7 @@ export default function RootLayout({
         </div>
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   );
